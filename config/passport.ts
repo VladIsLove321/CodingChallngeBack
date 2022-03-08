@@ -33,7 +33,10 @@ export const verifyCallback = async (
   }
 };
 
-export const serializeUser = (user: User, done: PassportCB) => {
+export const serializeUser = (
+  user: User,
+  done: (err: any, user?: number) => void
+) => {
   done(null, user.id);
 };
 

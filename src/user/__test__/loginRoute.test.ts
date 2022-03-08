@@ -1,5 +1,5 @@
 import request from "supertest";
-import { app } from "../../app";
+import { app } from "../../../app";
 import { User } from "../model";
 import * as userRepository from "../../user/repository";
 import * as passwordUtils from "../../utils/passwordUtils";
@@ -27,6 +27,9 @@ it("login route returns 200 on correct user email and password and sets cookie",
   expect(res.body).toEqual({
     success: true,
     message: "authentication succeeded",
+    user: {
+      fullName: savedUserData.fullName,
+    },
   });
   expect(getUserDataByEmailSpy).toBeCalledTimes(1);
   expect(validPasswordSpy).toBeCalledTimes(1);

@@ -4,10 +4,14 @@ import session from "express-session";
 import pgSimple from "connect-pg-simple";
 import cors from "cors";
 import passport from "passport";
-import { deserializeUser, serializeUser, strategy } from "./config/passport";
-import { createTicketRouter } from "./user/routes";
-import { errorHandler } from "./middleware/errorHandler";
-import { NotFoundError } from "./utils/errors/notFoundError";
+import {
+  deserializeUser,
+  serializeUser,
+  strategy,
+} from "./src/config/passport";
+import { createTicketRouter } from "./src/user/routes";
+import { errorHandler } from "./src/middleware/errorHandler";
+import { NotFoundError } from "./src/utils/errors/notFoundError";
 
 const app: Application = express();
 

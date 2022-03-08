@@ -2,7 +2,7 @@ import "reflect-metadata";
 import "dotenv/config";
 import { app } from "./app";
 import { createConnection } from "typeorm";
-import { User } from "./user/model";
+import { User } from "./src/user/model";
 
 const main = async () => {
   try {
